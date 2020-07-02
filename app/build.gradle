@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.gms.google-services'
 
 //// Load keystore
 // def keystorePropertiesFile = rootProject.file("keystore.properties")
@@ -43,8 +44,9 @@ android {
     }
   }
 
-  dataBinding {
-    enabled = true
+  buildFeatures {
+    dataBinding = true
+    viewBinding = true
   }
 
   testOptions {
@@ -73,6 +75,14 @@ dependencies {
 
   // Any libraries from
 
+  // Firebase
+  implementation "com.google.firebase:firebase-analytics-ktx:${versions.firebase_analystics}"
+  implementation "com.google.android.gms:play-services-ads:${versions.play_services_ads}"
+  implementation "com.google.firebase:firebase-firestore-ktx:${versions.firebase_firestore}"
+  implementation "com.google.firebase:firebase-auth-ktx:${versions.firebase_auth}"
+  implementation "com.google.firebase:firebase-functions-ktx:${versions.firebase_functions}"
+  implementation "com.google.firebase:firebase-messaging:${versions.firebase_messaging}"
+  implementation "com.google.firebase:firebase-storage-ktx:${versions.firebase_storage}"
 
   // Any libraries end
 }

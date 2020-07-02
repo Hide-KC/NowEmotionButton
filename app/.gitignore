@@ -1,2 +1,4 @@
 /build
 orig.build.gradle
+src/main/res/values/ads_ids.xml
+google-services.json

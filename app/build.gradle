@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+//// Load keystore
+// def keystorePropertiesFile = rootProject.file("keystore.properties")
+// def keystoreProperties = new Properties()
+// keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+android {
+////  Create project-root/keystore.properties
+//  signingConfigs {
+//    release {
+//      storeFile file(keystoreProperties['storeFile'])
+//      storePassword keystoreProperties['storePassword']
+//      keyAlias keystoreProperties['keyAlias']
+//      keyPassword keystoreProperties['keyPassword']
+//    }
+//  }
+
+  compileSdkVersion buildConfig.compileSdk
+
+  defaultConfig {
+    applicationId 'work.kcs_labo.now_emotion_button'
+    minSdkVersion buildConfig.minSdk
+    targetSdkVersion buildConfig.targetSdk
+    versionCode buildConfig.versionCode
+    versionName buildConfig.versionName
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    vectorDrawables.useSupportLibrary = true
+  }
+
+  buildTypes {
+    debug {
+      buildConfigField("boolean", "IS_DEBUG", "true")
+    }
+    release {
+      buildConfigField("boolean", "IS_DEBUG", "false")
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//      signingConfig signingConfigs.release
+    }
+  }
+
+  dataBinding {
+    enabled = true
+  }
+
+  testOptions {
+    unitTests {
+      includeAndroidResources = true
+    }
+  }
+
+//  For "Cannot inline bytecode built with JVM target 1.8 ..." warning
+//  kotlinOptions {
+//    jvmTarget = '1.8'
+//  }
+}
+
+dependencies {
+  // Auto generated from
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
+  implementation "androidx.appcompat:appcompat:${versions.appcompat}"
+  implementation "androidx.core:core-ktx:${versions.core_ktx}"
+  implementation "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}"
+  testImplementation "junit:junit:${versions.junit}"
+  androidTestImplementation "androidx.test.ext:junit:${versions.junitX}"
+  androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso_core}"
+  // Auto generated end
+
+  // Any libraries from
+
+
+  // Any libraries end
+}

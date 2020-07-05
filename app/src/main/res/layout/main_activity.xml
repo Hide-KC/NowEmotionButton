@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:ads="http://schemas.android.com/apk/res-auto">
+
+  <data>
+
+    <import type="work.kcs_labo.now_emotion_button.R" />
+
+    <variable
+      name="viewModel"
+      type="work.kcs_labo.now_emotion_button.MainActivityViewModel" />
+  </data>
+
+  <androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+      android:id="@+id/appBarLayout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="top">
+
+      <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_scrollFlags="scroll|enterAlways" />
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+      android:id="@+id/mainContents"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_gravity="top"
+      app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:id="@+id/fab"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="bottom|end"
+      android:layout_marginEnd="@dimen/fab_margin_end"
+      android:layout_marginBottom="@dimen/fab_margin_bottom"
+      android:backgroundTint="?attr/colorPrimary"
+      android:clickable="true"
+      android:focusable="true"
+      app:layout_behavior=".behavior.FabBehavior"
+      app:srcCompat="@android:drawable/ic_input_add" />
+
+    <com.google.android.gms.ads.AdView
+      android:id="@+id/bannerAds"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="bottom|center"
+      android:layout_marginBottom="?attr/actionBarSize"
+      ads:adSize="BANNER"
+      ads:adUnitId="@string/banner_ads_unit_id" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+      android:id="@+id/bottomNavigation"
+      android:theme="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="bottom"
+      app:labelVisibilityMode="labeled"
+      app:layout_behavior=".behavior.BottomWidgetBehavior"
+      app:menu="@menu/bottom_navigation_menu" />
+
+  </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

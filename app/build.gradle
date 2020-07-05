@@ -56,9 +56,9 @@ android {
   }
 
 //  For "Cannot inline bytecode built with JVM target 1.8 ..." warning
-//  kotlinOptions {
-//    jvmTarget = '1.8'
-//  }
+  kotlinOptions {
+    jvmTarget = '1.8'
+  }
 }
 
 dependencies {
@@ -83,6 +83,9 @@ dependencies {
   implementation "com.google.firebase:firebase-functions-ktx:${versions.firebase_functions}"
   implementation "com.google.firebase:firebase-messaging:${versions.firebase_messaging}"
   implementation "com.google.firebase:firebase-storage-ktx:${versions.firebase_storage}"
+
+  //Material
+  implementation "com.google.android.material:material:${versions.material}"
 
   // Any libraries end
 }

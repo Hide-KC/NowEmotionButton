@@ -1,3 +1,7 @@
 <resources>
-  <string name="app_name">Now Emotion Button</string>
+  <string name="app_name">今の気分ボタン</string>
+  <string name="menu_home">ホーム</string>
+  <string name="menu_shared_user">共有ユーザ</string>
+  <string name="menu_calendar">カレンダー</string>
+  <string name="menu_setting">設定</string>
 </resources>

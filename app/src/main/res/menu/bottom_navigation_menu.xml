@@ -15,7 +15,8 @@
     android:id="@+id/calendar"
     android:icon="@drawable/ic_calendar_today_24px"
     android:title="@string/menu_calendar"
-    app:showAsAction="ifRoom" />
+    app:showAsAction="ifRoom"
+    android:visible="false" />
   <item
     android:id="@+id/setting"
     android:icon="@drawable/ic_build_24px"

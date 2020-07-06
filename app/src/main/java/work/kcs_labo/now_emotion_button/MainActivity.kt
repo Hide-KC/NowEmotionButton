@@ -1,12 +1,14 @@
 package work.kcs_labo.now_emotion_button
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.main_activity.*
 import work.kcs_labo.now_emotion_button.databinding.MainActivityBinding
+import work.kcs_labo.now_emotion_button.page.HomeFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,6 +18,8 @@ class MainActivity : AppCompatActivity() {
 
     setupWidget(binding)
 
+    val viewModel: MainActivityViewModel by viewModels()
+
     MobileAds.initialize(this) { _ ->
       //TODO("Not yet implemented")
       println("MobileAds initialized.")
@@ -24,6 +28,8 @@ class MainActivity : AppCompatActivity() {
   }
 
   private fun setupWidget(binding: MainActivityBinding) {
+    setSupportActionBar(toolbar)
+
     binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
       when (item.itemId) {
         R.id.home -> {
@@ -46,6 +52,10 @@ class MainActivity : AppCompatActivity() {
           throw IllegalArgumentException("Illegal itemId was selected")
         }
       }
+    }
+
+    binding.fab.setOnClickListener {
+      //TODO("Not yet implemented")
     }
   }
 }

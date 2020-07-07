@@ -34,18 +34,24 @@ class MainActivity : AppCompatActivity() {
       when (item.itemId) {
         R.id.home -> {
           //TODO("Not yet implemented")
+          binding.fab.setImageResource(android.R.drawable.ic_input_add)
+          binding.fab.show()
           return@setOnNavigationItemSelectedListener true
         }
         R.id.people -> {
           //TODO("Not yet implemented")
+          binding.fab.show()
+          binding.fab.setImageResource(R.drawable.ic_person_add_24px)
           return@setOnNavigationItemSelectedListener true
         }
         R.id.calendar -> {
           //TODO("Not yet implemented")
+          binding.fab.hide()
           return@setOnNavigationItemSelectedListener true
         }
         R.id.setting -> {
           //TODO("Not yet implemented")
+          binding.fab.hide()
           return@setOnNavigationItemSelectedListener true
         }
         else -> {

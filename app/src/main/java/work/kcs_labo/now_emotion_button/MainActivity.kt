@@ -8,7 +8,6 @@ import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.main_activity.*
 import work.kcs_labo.now_emotion_button.databinding.MainActivityBinding
-import work.kcs_labo.now_emotion_button.page.HomeFragment
 
 class MainActivity : AppCompatActivity() {
 

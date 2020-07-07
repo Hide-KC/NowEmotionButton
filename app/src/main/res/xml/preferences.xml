@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+  <PreferenceCategory
+    android:title="共有設定"
+    android:key="sharing_category">
+
+    <Preference
+      android:key="user_id"
+      android:title="共有ID" />
+
+    <Preference
+      android:key="qr_code"
+      android:title="共有QRコード" />
+
+  </PreferenceCategory>
+
+  <PreferenceCategory
+    android:title="テーマ設定"
+    android:key="theme_category">
+    <ListPreference
+      android:title="アプリのテーマ"
+      android:key="theme"
+      app:useSimpleSummaryProvider="true"
+      app:defaultValue="0"
+      android:entries="@array/theme_entries"
+      android:entryValues="@array/theme_values"
+      />
+  </PreferenceCategory>
+</PreferenceScreen>

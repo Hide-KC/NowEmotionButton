@@ -95,5 +95,8 @@ dependencies {
   implementation "androidx.activity:activity-ktx:${versions.activity_ktx}"
   implementation "androidx.fragment:fragment-ktx:${versions.fragment_ktx}"
 
+  //Preferences
+  implementation "androidx.preference:preference:${versions.preference}"
+
   // Any libraries end
 }

@@ -5,4 +5,8 @@
   <string name="menu_calendar">カレンダー</string>
   <string name="menu_setting">設定</string>
   <string name="now_emotion_txt">今の気分は？</string>
+  <string name="history_text">履歴</string>
+  <string name="terminal_theme">端末の設定に従う</string>
+  <string name="light_theme">ライト</string>
+  <string name="dark_theme">ダーク</string>
 </resources>
